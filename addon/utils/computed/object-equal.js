@@ -1,6 +1,4 @@
-import Ember from 'ember';
-
-const { computed, get } = Ember;
+import { get, computed } from '@ember/object';
 const { keys } = Object;
 
 /**

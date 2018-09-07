@@ -1,11 +1,7 @@
-import Ember from 'ember';
+import EmberObject from '@ember/object';
+import { run } from '@ember/runloop';
 import objectEqual from 'ember-changeset/utils/computed/object-equal';
 import { module, test } from 'qunit';
-
-const {
-  Object: EmberObject,
-  run
-} = Ember;
 
 module('Unit | Utility | computed/object equal');
 

@@ -1,11 +1,6 @@
-import Ember from 'ember';
-
-const {
-  assert,
-  computed,
-  get,
-  isPresent
-} = Ember;
+import { assert } from '@ember/debug';
+import { get, computed } from '@ember/object';
+import { isPresent } from '@ember/utils';
 const { keys } = Object;
 
 export default function isEmptyObject(dependentKey) {

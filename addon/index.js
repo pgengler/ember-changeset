@@ -1,4 +1,20 @@
-import Ember from 'ember';
+import { resolve, all } from 'rsvp';
+import { readOnly, not } from '@ember/object/computed';
+import Evented from '@ember/object/evented';
+import { assert } from '@ember/debug';
+import { isArray, A as emberArray } from '@ember/array';
+import EmberObject, {
+  setProperties,
+  set,
+  get
+} from '@ember/object';
+import {
+  typeOf,
+  isPresent,
+  isNone,
+  isEqual,
+  isEmpty
+} from '@ember/utils';
 import objectToArray from 'ember-changeset/utils/computed/object-to-array';
 import isEmptyObject from 'ember-changeset/utils/computed/is-empty-object';
 import isPromise from 'ember-changeset/utils/is-promise';
@@ -9,23 +25,6 @@ import includes from 'ember-changeset/utils/includes';
 import take from 'ember-changeset/utils/take';
 import isChangeset, { CHANGESET } from 'ember-changeset/utils/is-changeset';
 
-const {
-  Object: EmberObject,
-  RSVP: { all, resolve },
-  computed: { not, readOnly },
-  Evented,
-  A: emberArray,
-  assert,
-  get,
-  isArray,
-  isEmpty,
-  isEqual,
-  isNone,
-  isPresent,
-  set,
-  setProperties,
-  typeOf
-} = Ember;
 const { keys } = Object;
 const CONTENT = '_content';
 const CHANGES = '_changes';
