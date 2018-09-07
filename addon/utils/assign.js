@@ -1,5 +1,5 @@
-import { merge, assign } from '@ember/polyfills';
-const assign = assign || Object.assign || _assign;
+import { merge, assign as assignPolyfill } from '@ember/polyfills';
+const assign = assignPolyfill || Object.assign || _assign;
 
 function _assign(origin, ...sources) {
   return sources.reduce((acc, source) => merge(acc, source), merge({}, origin));

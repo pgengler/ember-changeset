@@ -23,7 +23,7 @@ test('it returns false if the object has at least 1 key', function(assert) {
 });
 
 test('it throws if invoked without dependent key', function(assert) {
-  assert.throws(() => EmberObject.extend({ isEmpty: isEmptyObject() }), ({ message }) => {
+  assert.throws(() => EmberObject.extend({ isEmpty: isEmptyObject() }), function ({ message }) {
     return message === 'Assertion Failed: `dependentKey` must be defined';
   }, 'should throw error');
 });
